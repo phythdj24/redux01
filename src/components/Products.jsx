@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-import { add } from '../store/cartSlice'
 import { useDispatch } from 'react-redux'
+import { add } from '../store/cartSlice'
+
 
 
 const Products = () => {
@@ -16,15 +17,14 @@ const Products = () => {
             console.log(data)
             setProducts(data)
           }
-          fetchProducts()
+       fetchProducts()
      },[]) 
-
+     
      const handleAdd = (product)=>{
-           dispatch(add(product))
+          dispatch(add(product))
      }
-
-    
-
+     
+  
 
 
   return (
@@ -35,7 +35,7 @@ const Products = () => {
                 <img src={product.image} alt="" />
                 <h4>{product.title}</h4>
                 <h5>{product.price}</h5>
-                <button onClick={()=> handleAdd(product)} className="btn">Add To Cart</button>
+                <button onClick={()=> handleAdd()} className="btn">Add To Cart</button>
              </div>
             ))
         }
